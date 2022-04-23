@@ -265,13 +265,8 @@ if (combine_beach_equal_properties.length > 0) {
                 userSequence.push(b1)
                 machineSequence.push(b2)
 
-            } else if (urb_with_properties_atm[3][1] > 15) {
-                b1 = urb_with_properties_atm[3][1]
-
-                userSequence.push(b1)
-                machineSequence.push(b1)
-
             } else {
+                b1 = urb_with_properties_atm[3][1]
                 b2 = urb_with_properties_atm[3][1]
 
                 userSequence.push(b2)
