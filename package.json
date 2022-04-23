@@ -1,0 +1,27 @@
+{
+  "name": "surf-spot-project",
+  "version": "1.0.0",
+  "description": "Surf Spot helps you find the best beach to practice surf, suited to your surfing level",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "surfSpot": " npm test; node main"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimaoBolota/Surf-Spot-Project.git"
+  },
+  "author": "Simão Bolota Sá",
+  "license": "ISC",
+  "devDependencies": {
+    "jest-puppeteer": "^6.1.0"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/SimaoBolota/Surf-Spot-Project/issues"
+  },
+  "homepage": "https://github.com/SimaoBolota/Surf-Spot-Project#readme"
+}
