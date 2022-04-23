@@ -76,8 +76,6 @@ let beach_equal_wind_dir = []
 let beach_equal_wind_speed = []
 let beach_equal_swell = []
 let beach_equal_wave_period = []
-// let beach_equal_tides = []
-
 
 for (let j = 0; j < data_beaches_atm.length; j++) {
     for (let i = 0; i < surfing_level_data[0].length; i++) {
@@ -265,13 +263,8 @@ if (combine_beach_equal_properties.length > 0) {
                 userSequence.push(b1)
                 machineSequence.push(b2)
 
-            } else if (urb_with_properties_atm[3][1] > 15) {
+            } else { 
                 b1 = urb_with_properties_atm[3][1]
-
-                userSequence.push(b1)
-                machineSequence.push(b1)
-
-            } else {
                 b2 = urb_with_properties_atm[3][1]
 
                 userSequence.push(b2)
