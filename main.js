@@ -38,14 +38,14 @@ let wave_period_default
 if (surfing_level == 'Bath Surfer') {
     weather_default = range(10, 30)
     wind_dir_default = ['N', 'S', 'W', 'E', 'NW', 'SW', 'NE', 'SE']
-    wind_speed_default = range(0, 2)
+    wind_speed_default = range(0, 5)
     swell_default = range(0, 2)
     wave_period_default = range(10, 30)
     // tides_default = 'Low'
 } else if (surfing_level == "Intermediate") {
     weather_default = range(10, 30)
     wind_dir_default = ['N', 'S', 'W', 'E', 'NW', 'SW', 'NE', 'SE']
-    wind_speed_default = range(0, 10)
+    wind_speed_default = range(0, 15)
     swell_default = range(0, 4)
     wave_period_default = range(8, 30)
     // tides_default = 'Low'
@@ -263,7 +263,7 @@ if (combine_beach_equal_properties.length > 0) {
                 userSequence.push(b1)
                 machineSequence.push(b2)
 
-            } else { 
+            } else {
                 b1 = urb_with_properties_atm[3][1]
                 b2 = urb_with_properties_atm[3][1]
 
@@ -333,45 +333,31 @@ if (combine_beach_equal_properties.length > 0) {
                             userSequence[1] == b1 &&
                             machineSequence[1] == b1) {
                             console.log(`Transparently entailed, your recommendation - ${urb_with_properties_atm[0][1]} - is better`)
-                        } else {
-                            console.log(`Not entailed, machine recommended beach is better - ${beach_chosen_by_machine_properties[0][0][1]}`)
-                        }
-                    }
-                    else if (userSequence[0] == c2 && c2 > c1) { //a1b2 c2>c1  swell maiores, wind speed maior , tempo quente
-                        console.log(2)
-
-                        if (userSequence[2] == a1 &&
+                        } else if (userSequence[2] == a1 &&
                             machineSequence[2] == a1 &&
 
                             userSequence[1] == b2 &&
                             machineSequence[1] == b2) {
                             console.log('Transparently entailed, your recommendation is better')
+
+                        } else if (userSequence[2] == a2 &&
+                            machineSequence[2] == a2 &&
+
+                            userSequence[1] == b2 &&
+                            machineSequence[1] == b2) {
+
+                            console.log('Transparently entailed, your recommendation is better')
                         } else {
                             console.log(`Not entailed, machine recommended beach is better - ${beach_chosen_by_machine_properties[0][0][1]}`)
+
                         }
-
-                    }
-
-                    else if (userSequence[0] == c1 && c1 > c2) { // a2b1 c1>c2  swell mneor, wind speed menor, tempo frio --> a lot of schools
-                        console.log(3)
+                    } else if (userSequence[0] == c1 && c1 > c2) { // a2b1 c1>c2  swell mneor, wind speed menor, tempo frio --> a lot of schools
                         if (
                             userSequence[2] == a2 &&
                             machineSequence[2] == a2 &&
 
                             userSequence[1] == b1 &&
                             machineSequence[1] == b1) {
-                            console.log('Transparently entailed, your recommendation is better')
-                        } else {
-                            console.log(`Not entailed, machine recommended beach is better - ${beach_chosen_by_machine_properties[0][0][1]}`)
-                        }
-
-                    }
-                    else if (userSequence[0] == c2 && c2 > c1) {//a2b2  c2>c1  swell menor e wind speed maior  tempo quente preferivel a frio
-                        console.log(4)
-                        if (userSequence[2] == a2 &&
-                            machineSequence[2] == a2 &&
-                            userSequence[1] == b2 &&
-                            machineSequence[1] == b2) {
 
                             console.log('Transparently entailed, your recommendation is better')
                         } else {
@@ -384,7 +370,6 @@ if (combine_beach_equal_properties.length > 0) {
 
                 } else if ((userSequence.length == 2) && (machineSequence.length == 2)) {
                     if (userSequence[0] == b2 && b2 < b1) { //a2  b2>b1   se swell menores, wind speed maior é preferivel, so it makes waves bigger
-                        console.log(1)
                         if (
                             userSequence[1] == a1 &&
                             machineSequence[1] == a1) {
@@ -393,7 +378,6 @@ if (combine_beach_equal_properties.length > 0) {
                             console.log(`Not entailed, machine recommended beach is better - ${beach_chosen_by_machine_properties[0][0][1]}`)
                         }
                     } else if (userSequence[0] == b1 && b1 < b2) { // a1  b1>b2   se swell maiores, wind speed menor, so they dont get out of control
-                        console.log(1)
                         if (
                             userSequence[1] == a2 &&
                             machineSequence[1] == a2) {
@@ -415,7 +399,7 @@ if (combine_beach_equal_properties.length > 0) {
                 } else {
                     console.log('Something is wrong')
                 }
-            }else if(userSequence == machineSequence){
+            } else if (userSequence == machineSequence) {
                 console.log(`Looks like you'll have a great time with either beaches: ${beach_chosen_by_machine_properties[0][0][1]} or ${user_recommended_beach_nr1}`)
                 console.log('Maybe choose the one closest to you')
             }
