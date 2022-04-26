@@ -237,18 +237,18 @@ if (combine_beach_equal_properties.length > 0) {
             let machineSequence = []
 
             if (beach_chosen_by_machine_properties[0][1][1] > urb_with_properties_atm[1][1]) {
-                c1 = beach_chosen_by_machine_properties[0][1][1]
-                c2 = urb_with_properties_atm[1][1]
-
-                userSequence.push(c2)
-                machineSequence.push(c1)
-            }
-            else if (beach_chosen_by_machine_properties[0][1][1] < urb_with_properties_atm[1][1]) {
                 c2 = beach_chosen_by_machine_properties[0][1][1]
                 c1 = urb_with_properties_atm[1][1]
 
                 userSequence.push(c1)
                 machineSequence.push(c2)
+            }
+            else if (beach_chosen_by_machine_properties[0][1][1] < urb_with_properties_atm[1][1]) {
+                c1 = beach_chosen_by_machine_properties[0][1][1]
+                c2 = urb_with_properties_atm[1][1]
+
+                userSequence.push(c2)
+                machineSequence.push(c1)
 
             } else {
                 console.log('No need to change. Move to next')
@@ -258,54 +258,48 @@ if (combine_beach_equal_properties.length > 0) {
 
 
             if (beach_chosen_by_machine_properties[0][3][1] > urb_with_properties_atm[3][1]) {
+                b2 = beach_chosen_by_machine_properties[0][3][1]
+                b1= urb_with_properties_atm[3][1]
+
+                userSequence.push(b1)
+                machineSequence.push(b2)
+            }
+            else if (beach_chosen_by_machine_properties[0][3][1] < urb_with_properties_atm[3][1]) {
                 b1 = beach_chosen_by_machine_properties[0][3][1]
                 b2 = urb_with_properties_atm[3][1]
 
                 userSequence.push(b2)
                 machineSequence.push(b1)
-            }
-            else if (beach_chosen_by_machine_properties[0][3][1] < urb_with_properties_atm[3][1]) {
-                b2 = beach_chosen_by_machine_properties[0][3][1]
-                b1 = urb_with_properties_atm[3][1]
-
-                userSequence.push(b1)
-                machineSequence.push(b2)
 
             } else {
                 b1 = urb_with_properties_atm[3][1]
                 b2 = urb_with_properties_atm[3][1]
 
                 userSequence.push(b2)
-                machineSequence.push(b2)
+                machineSequence.push(b1)
             }
 
 
             if (beach_chosen_by_machine_properties[0][4][1] > urb_with_properties_atm[4][1]) {
-                a1 = beach_chosen_by_machine_properties[0][4][1]
-                a2 = urb_with_properties_atm[4][1]
-
-                userSequence.push(a2)
-                machineSequence.push(a1)
-            }
-            else if (beach_chosen_by_machine_properties[0][4][1] < urb_with_properties_atm[4][1]) {
                 a2 = beach_chosen_by_machine_properties[0][4][1]
                 a1 = urb_with_properties_atm[4][1]
 
                 userSequence.push(a1)
                 machineSequence.push(a2)
-
-            } else if (urb_with_properties_atm[4][1] > 4) {
-                a1 = urb_with_properties_atm[4][1]
+            }
+            else if (beach_chosen_by_machine_properties[0][4][1] < urb_with_properties_atm[4][1]) {
+                a1 = beach_chosen_by_machine_properties[0][4][1]
                 a2 = urb_with_properties_atm[4][1]
 
-                userSequence.push(a1)
+                userSequence.push(a2)
                 machineSequence.push(a1)
+
             } else {
                 a2 = urb_with_properties_atm[4][1]
                 a1 = urb_with_properties_atm[4][1]
 
                 userSequence.push(a2)
-                machineSequence.push(a2)
+                machineSequence.push(a1)
             }
 
             console.log(a1, a2)
@@ -324,15 +318,14 @@ if (combine_beach_equal_properties.length > 0) {
             // weather wind_speed swell swell wind_speed weather
 
             //1st question - DO I NEED TO CHANGE THIS? - answered by the lenght of the sequence
+            
             //2nd question - AM I ALLOWED TO CHANGE THIS? - checks the conditions depending on the sequence length
 
 
             if (userSequence != machineSequence) {
 
                 if ((userSequence.length == 3) && (machineSequence.length == 3)) {
-                    //check conditions and see if it is allowed
-                    if (userSequence[0] == c2 && c2 > c1) { //a1b1 c2>c1  swell maior e wind speed menor, tempo quemte
-                        console.log(1)
+                    if (userSequence[0] == c2 && c2 > c1) { 
                         if (
                             userSequence[2] == a1 &&
                             machineSequence[2] == a1 &&
@@ -420,7 +413,7 @@ if (combine_beach_equal_properties.length > 0) {
 
                     }
                 } else if ((userSequence.length == 1) && (machineSequence.length == 1)) {
-                    if (userSequence[0] == a1 && a1 > a2) { // a1 > a2   swell maior melhor que swell pequena (dentro dos limites do surfing level)
+                    if (userSequence[0] == a2 && a2> a1) { // a1 > a2   swell maior melhor que swell pequena (dentro dos limites do surfing level)
                         console.log('Entailed, your recommendation is better')
                         console.log('\n')
 
