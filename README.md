@@ -8,6 +8,13 @@ The application is displayed in the console in the following way, with the sente
 
 ![image](https://user-images.githubusercontent.com/55351724/165579754-5a1063d0-30e1-44ea-be43-5f9ff6220557.png)
 
+Display of the application running:
+
+
+https://user-images.githubusercontent.com/55351724/165582713-96dc806b-531a-47f6-a0f5-5a5f3295bb1c.mov
+
+
+
 Installation:
   - 
 - Clone code from the GitHub Repository
