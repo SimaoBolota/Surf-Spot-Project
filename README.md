@@ -1,5 +1,6 @@
 # Surf-Spot-Project
-Project created for COS521 class
+Project created for COS521 class.
+The main goal is to use CP-networks to assess which is the most suitable beach for the practice of surf.
 
 Preview of the application:
 ![image](https://user-images.githubusercontent.com/55351724/165579754-5a1063d0-30e1-44ea-be43-5f9ff6220557.png)
