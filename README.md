@@ -19,7 +19,8 @@ Installation:
   - 
 - Clone code from the GitHub Repository
 - npm install
-- npm run surfSpot
+- npm run surfSpot (runs the data gathering and the application itself)
+- node main (to only run the application)
 
 User Responses available:
   - 
