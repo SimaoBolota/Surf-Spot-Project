@@ -250,10 +250,7 @@ if (combine_beach_equal_properties.length > 0) {
                 userSequence.push(c2)
                 machineSequence.push(c1)
 
-            } else {
-                console.log('No need to change. Move to next')
-                console.log('\n')
-            }
+            } 
 
 
 
@@ -302,12 +299,12 @@ if (combine_beach_equal_properties.length > 0) {
                 machineSequence.push(a1)
             }
 
-            console.log(a1, a2)
-            console.log(b1, b2)
-            console.log(c1, c2)
+            // console.log(a1, a2)
+            // console.log(b1, b2)
+            // console.log(c1, c2)
 
-            console.log('user sequence: ' + userSequence)
-            console.log('machine sequence :' + machineSequence)
+            // console.log('user sequence: ' + userSequence)
+            // console.log('machine sequence :' + machineSequence)
 
 
             //---------------- UNIVERSAL ORDER and CP NET
@@ -318,7 +315,7 @@ if (combine_beach_equal_properties.length > 0) {
             // weather wind_speed swell swell wind_speed weather
 
             //1st question - DO I NEED TO CHANGE THIS? - answered by the lenght of the sequence
-            
+
             //2nd question - AM I ALLOWED TO CHANGE THIS? - checks the conditions depending on the sequence length
 
 
