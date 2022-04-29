@@ -3,9 +3,6 @@ const prompt = require("prompt-sync")();
 
 
 
-
-// console.log(data_beaches_atm)
-
 //Prepping Data
 
 for (let i = 0; i < data_beaches_atm.length; i++) {
@@ -15,15 +12,12 @@ for (let i = 0; i < data_beaches_atm.length; i++) {
     data_beaches_atm[i][0][5][1] = parseFloat(data_beaches_atm[i][0][5][1].slice(0, -1))
 
 }
-// console.log(data_beaches_atm[0][0])
 
 // Defining User Surfing Level
 console.log('\n')
 const surfing_level = prompt("What is your surfing level? ");
 console.log('\n')
 
-
-// console.log(`Ok, so your level is ${surfing_level}`);
 
 
 function range(start, end) {
@@ -35,7 +29,6 @@ let wind_dir_default
 let wind_speed_default
 let swell_default
 let wave_period_default
-// let tides_default
 
 if (surfing_level == 'Bath Surfer') {
     weather_default = range(10, 30)
@@ -43,28 +36,24 @@ if (surfing_level == 'Bath Surfer') {
     wind_speed_default = range(0, 5)
     swell_default = range(0, 2)
     wave_period_default = range(10, 30)
-    // tides_default = 'Low'
 } else if (surfing_level == "Intermediate") {
     weather_default = range(10, 30)
     wind_dir_default = ['N', 'S', 'W', 'E', 'NW', 'SW', 'NE', 'SE']
     wind_speed_default = range(0, 15)
     swell_default = range(0, 4)
     wave_period_default = range(8, 30)
-    // tides_default = 'Low'
 } else if (surfing_level == "Pro") {
     weather_default = range(0, 30)
     wind_dir_default = ['N', 'S', 'W', 'E', 'NW', 'SW', 'NE', 'SE']
     wind_speed_default = range(0, 20)
     swell_default = range(0, 10)
     wave_period_default = range(5, 30)
-    // tides_default = ['High', 'Low']
 } else if (surfing_level == "McNamara") {
     weather_default = range(0, 30)
     wind_dir_default = ['N', 'S', 'W', 'E', 'NW', 'SW', 'NE', 'SE']
     wind_speed_default = range(0, 30)
     swell_default = range(0, 30)
     wave_period_default = range(0, 30)
-    // tides_default = ['High', 'Low']
 }
 
 surfing_level_data = [weather_default, wind_dir_default, wind_speed_default, swell_default, wave_period_default]
@@ -112,13 +101,6 @@ for (let j = 0; j < data_beaches_atm.length; j++) {
 }
 
 
-// console.log(beach_equal_weather)
-// console.log(beach_equal_wind_dir)
-// console.log(beach_equal_wind_speed)
-// console.log(beach_equal_swell)
-// console.log(beach_equal_wave_period)
-
-
 let combine_beach_equal_properties = [beach_equal_weather, beach_equal_wind_dir, beach_equal_wind_speed, beach_equal_swell, beach_equal_wave_period]
 
 arrays = combine_beach_equal_properties
@@ -139,7 +121,7 @@ if (combine_beach_equal_properties.length > 0) {
             index) => arr.indexOf(item) === index);
     }
     combine_beach_equal_properties = removeDuplicates(combine_beach_equal_properties)
-    //
+    
 
 
     const machine_constrained_beaches = combine_beach_equal_properties
@@ -151,7 +133,6 @@ if (combine_beach_equal_properties.length > 0) {
         if (machine_constrained_beaches[k] == beach_chosen_by_machine) {
             machine_constrained_beaches.splice(k, 1)
         }
-
     }
 
     let user_recommended_beach
@@ -169,21 +150,13 @@ if (combine_beach_equal_properties.length > 0) {
             const user_recommended_beach_nr1 = prompt('Which one? ')
             console.log('\n')
             for (let h = 0; h < machine_constrained_beaches.length; h++) {
-                // console.log(user_recommended_beach_nr1)
-                // console.log(machine_constrained_beaches[h])
-                // console.log(beach_chosen_by_machine)
                 if (machine_constrained_beaches[h] == user_recommended_beach_nr1 && user_recommended_beach_nr1 != beach_chosen_by_machine) {
                     user_recommended_beach = machine_constrained_beaches[h]
                     console.log('Ok, got it!')
                     console.log('\n')
 
                 }
-
-
             }
-
-
-
 
 
             //---------------- COMPARE urb_with_properties_atm with the other ones from the machine_constrained_beaches, one by one
@@ -222,9 +195,7 @@ if (combine_beach_equal_properties.length > 0) {
                 }
             }
 
-
             // TRANSFORM INTO a1b2c1 > a2b1c2 type sequence
-
 
             let a1 = []
             let a2 = []
@@ -298,13 +269,6 @@ if (combine_beach_equal_properties.length > 0) {
                 userSequence.push(a2)
                 machineSequence.push(a1)
             }
-
-            // console.log(a1, a2)
-            // console.log(b1, b2)
-            // console.log(c1, c2)
-
-            // console.log('user sequence: ' + userSequence)
-            // console.log('machine sequence :' + machineSequence)
 
 
             //---------------- UNIVERSAL ORDER and CP NET
